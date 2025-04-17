@@ -5,6 +5,7 @@
 //  Created by linhey on 4/15/25.
 //
 
+import SwiftUI
 
 struct HorizontalHalfEllipse: Shape {
     enum HalfEllipseDirection {

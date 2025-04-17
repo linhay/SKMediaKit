@@ -1,5 +1,5 @@
 {
-  "originHash" : "060c5c0c11f14eb42052370fdb222f7afc8b3bcd5c1fc4eb5fe33cc5ed133bf2",
+  "originHash" : "1c09b8061496ad36b7fa09225ed4f75fb5b301470888f9d9fb4753db510a60f1",
   "pins" : [
     {
       "identity" : "ffmpegkit",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "bdfa2da39bb18865b317c4ffd08cdef5f8efc043",
         "version" : "2.3.4"
+      }
+    },
+    {
+      "identity" : "swift-http-types",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-http-types.git",
+      "state" : {
+        "revision" : "a0a57e949a8903563aba4615869310c0ebf14c03",
+        "version" : "1.4.0"
       }
     }
   ],

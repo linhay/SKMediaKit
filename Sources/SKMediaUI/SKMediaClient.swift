@@ -24,15 +24,15 @@ public protocol SKMediaClient: AnyObject {
 
 public extension SKMediaClient {
     
-    public var speeds: [Float] { return [0.5, 1.0, 1.5, 2.0] }
+    var speeds: [Float] { return [0.5, 1.0, 1.5, 2.0] }
     
     func seek(forward value: TimeInterval) {
         seek(time: time.value + value, autoPlay: state.isPlaying) { flag in
             
         }
     }
-
-    public func setup() {
+    
+    func setup() {
         time.seekAction = { [weak self] time in
             guard let self else { return }
             self.seek(time: time, autoPlay: true) { flag in
@@ -41,13 +41,13 @@ public extension SKMediaClient {
         }
     }
     
-    public func switchToNextSpeed() {
+    func switchToNextSpeed() {
         let index = speeds.firstIndex(of: speed) ?? 0
         let nextIndex = (index + 1) % speeds.count
         speed = speeds[nextIndex]
     }
-
-    public func formated(speed: Float) -> String {
+    
+    func formated(speed: Float) -> String {
         // 保留最多2位小数
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -58,7 +58,7 @@ public extension SKMediaClient {
         return "\(text)x"
     }
     
-    public var formatedSpeed: String {
+    var formatedSpeed: String {
         if speed == 1.0 {
             return "倍速"
         }

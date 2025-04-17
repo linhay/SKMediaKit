@@ -81,6 +81,7 @@ public class SKMediaKSClient: @preconcurrency SKMediaClient, KSPlayerLayerDelega
             self.client = nil
             return
         }
+        options.appendHeader(resource.headers)
         let client = KSPlayerLayer(url: url, isAutoPlay: true, options: options)
         client.delegate = self
         self.client = client

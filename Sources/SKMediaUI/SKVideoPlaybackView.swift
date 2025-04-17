@@ -32,10 +32,16 @@ public struct SKVideoPlaybackView: View {
     }
     
     public var rateView: some View {
-        Text(store.formatedSpeed)
-            .onTapGesture {
-                store.switchToNextSpeed()
+        Group {
+            if store.time.duration > 0 {
+                Text(store.formatedSpeed)
+                    .onTapGesture {
+                        store.switchToNextSpeed()
+                    }
+            } else {
+                EmptyView()
             }
+        }
     }
     
     func CircleImage(_ name: String, width: CGFloat) -> some View {
@@ -117,7 +123,7 @@ public struct SKVideoPlaybackView: View {
                     }
                 }
                 .font(.system(size: 14, weight: .medium))
-                .scenePadding(.bottom)
+                .safeAreaPadding(.bottom)
                 .padding(.top, 12)
                 .padding(.horizontal, 12)
                 .background(.black.opacity(0.5))
